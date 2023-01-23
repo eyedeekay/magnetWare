@@ -1,7 +1,6 @@
 package magnetware
 
 import (
-	"fmt"
 	"io"
 	"net/http"
 	"os"
@@ -74,8 +73,6 @@ func (m *MagnetWare) Magnet(handler http.Handler) http.Handler {
 				}
 			}
 		}
-		fmt.Println("Executing middleware before request phase!")
-		// Pass control back to the handler
 		handler.ServeHTTP(w, r)
 	})
 }
